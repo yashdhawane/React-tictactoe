@@ -1,0 +1,117 @@
+.boardRow {
+    display: flex;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid #000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .winnerLineContainer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .winnerMessage {
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .winningLine {
+    position: absolute;
+    height: 4px;
+    background-color: red;
+    animation: drawLine 1s ease forwards;
+  }
+  
+  @keyframes drawLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Add specific lines based on the winning pattern */
+  .line-0-1-2 {
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .line-3-4-5 {
+    top: 150px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .line-6-7-8 {
+    top: 250px;
+    left: 0;
+    width: 100%;
+  }
+  
+  .line-0-3-6 {
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 4px;
+  }
+  
+  .line-1-4-7 {
+    top: 0;
+    left: 150px;
+    height: 100%;
+    width: 4px;
+  }
+  
+  .line-2-5-8 {
+    top: 0;
+    left: 250px;
+    height: 100%;
+    width: 4px;
+  }
+  
+  .line-0-4-8 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotate(45deg);
+  }
+  
+  .line-2-4-6 {
+    top: 0;
+    right: 0;
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+  
