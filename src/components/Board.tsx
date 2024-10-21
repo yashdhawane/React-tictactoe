@@ -1,5 +1,5 @@
 // src/components/Board.tsx
-import React from 'react';
+import React ,{useMemo} from 'react';
 import Square from './Square';
 import { useRecoilState } from 'recoil';
 import { calculateWinner } from '../utils/calculateWinner';
@@ -34,7 +34,7 @@ const Board: React.FC = () => {
     <Square value={squares[index]} onClick={() => handleClick(index)} />
   );
 
-  const winner = calculateWinner(squares);
+  const winner = useMemo(() => calculateWinner(squares), [squares]);
 
   
   const status = winner ? `Winner: ${winner}` : `Next player: ${isXNext ? 'X' : 'O'}`;
